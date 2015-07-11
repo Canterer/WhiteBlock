@@ -1,6 +1,6 @@
 #include "HelloWorldScene.h"
 #include "AppDelegate.h"
-
+#include "ShelfScene.h"
 USING_NS_CC;
 
 Scene* HelloWorld::createScene()
@@ -124,7 +124,8 @@ bool HelloWorld::init()
 
 void HelloWorld::menuPlayCallback(Ref* pSender)
 {
-	//Director::getInstance()->replaceScene(ShelfScene::scene());
+	log("replaceScene(ShelfScene::CreateScene())");
+	Director::getInstance()->replaceScene(ShelfScene::CreateScene());
 }
 
 /*

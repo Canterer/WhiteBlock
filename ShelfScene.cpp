@@ -1,4 +1,5 @@
 #include "ShelfScene.h"
+#include "GameScene.h"
 
 ShelfScene::ShelfScene(){}
 ShelfScene::~ShelfScene(){}
@@ -39,6 +40,7 @@ bool ShelfScene::init()
 		for(int i = 0; i < picture_array->count(); i++)
 		{
 			String* picture_string = (String*)picture_array->objectAtIndex(i);
+			//log(picture_string->getCString());
 			auto btn_sprite = Sprite::create(picture_string->getCString());
 			auto point_string = (String*)point_array->objectAtIndex(i);
 			auto point = PointFromString(point_string->getCString());
@@ -136,5 +138,5 @@ Scene* ShelfScene::CreateScene()
 void ShelfScene::GoToBook(Ref *pSender)
 {
 	log("GoToBook");
-	//Director::getInstance()->replaceScene(TransitionJumpZoom::create(1,GameSceme::CreateScene()));
+	Director::getInstance()->replaceScene(TransitionJumpZoom::create(1,GameScene::CreateScene()));
 }
